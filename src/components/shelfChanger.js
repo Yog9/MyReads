@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 /**
  * @description This represents the options for changing the shelves
@@ -10,15 +10,15 @@ import PropTypes from 'prop-types';
  */
 
 const ShelfChanger = ({ shelf, book, changeShelve }) => (
-  <div className='book-shelf-changer'>
+  <div className="book-shelf-changer">
     <select value={shelf} onChange={changeShelve(book)}>
-      <option value='move' disabled>
+      <option value="move" disabled>
         Move to...
       </option>
-      <option value='currentlyReading'>Currently Reading</option>
-      <option value='wantToRead'>Want to Read</option>
-      <option value='read'>Read</option>
-      <option value='none'>None</option>
+      <option value="currentlyReading">Currently Reading</option>
+      <option value="wantToRead">Want to Read</option>
+      <option value="read">Read</option>
+      <option value="none">None</option>
     </select>
   </div>
 );
