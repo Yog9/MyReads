@@ -28,7 +28,7 @@ const ListBooks = ({ books, shelves, getAllBooks, changeShelve }) => (
       </div>
     </div>
     <div className="open-search">
-      <Link to="/search">
+      <Link to="/MyReads/search">
         <button>Add a book</button>
       </Link>
     </div>

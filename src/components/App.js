@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, HashRouter } from "react-router-dom";
+import { Route } from "react-router-dom";
 import * as BooksAPI from "../utils/BooksAPI";
 import ListBooks from "./ListBooks";
 import SearchBooks from "./SearchBooks";
@@ -83,34 +83,32 @@ class BooksApp extends React.Component {
     const { searchBookList, books } = this.state;
 
     return (
-      <HashRouter basename="/MyReads">
-        <div className="app">
-          <Route
-            exact
-            path="/"
-            render={() => (
-              <ListBooks
-                books={books}
-                getAllBooks={this.getAllBooks}
-                shelves={shelves}
-                changeShelve={this.changeShelve}
-              />
-            )}
-          />
-          <Route
-            path="/search"
-            render={() => (
-              <SearchBooks
-                getAllBooks={this.getAllBooks}
-                books={books}
-                searchBook={this.searchBook}
-                searchBookList={searchBookList}
-                changeShelve={this.changeShelve}
-              />
-            )}
-          />
-        </div>
-      </HashRouter>
+      <div className="app">
+        <Route
+          exact
+          path="/MyReads/"
+          render={() => (
+            <ListBooks
+              books={books}
+              getAllBooks={this.getAllBooks}
+              shelves={shelves}
+              changeShelve={this.changeShelve}
+            />
+          )}
+        />
+        <Route
+          path="/MyReads/search"
+          render={() => (
+            <SearchBooks
+              getAllBooks={this.getAllBooks}
+              books={books}
+              searchBook={this.searchBook}
+              searchBookList={searchBookList}
+              changeShelve={this.changeShelve}
+            />
+          )}
+        />
+      </div>
     );
   }
 }
